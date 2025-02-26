@@ -31,7 +31,7 @@ function AuthForm({ isSignUp }) {
 
   // INPUT STYLING
   const inputStyle =
-    "input-hover-and-focus w-full cursor-pointer bg-transparent pb-5 pl-4 text-bodyM font-light caret-accentColor outline-none";
+    "w-full cursor-pointer bg-transparent pb-5 pl-4 text-bodyM font-light caret-accentColor outline-none";
 
   return (
     <form
