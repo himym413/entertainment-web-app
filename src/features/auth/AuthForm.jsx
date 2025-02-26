@@ -1,6 +1,6 @@
 import { useForm } from "react-hook-form";
 import { useLogin } from "./useLogin";
-import { useSignUp } from "./useSignup";
+import { useSignUp } from "./useSignUp";
 
 import InputLineBottom from "../../ui/InputLineBottom";
 import InputError from "../../ui/InputError";
