@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function EmailConfirmation() {
   return (
-    <div className="mt-20 flex flex-col items-center justify-center gap-6 px-4 text-center">
+    <main className="mt-20 flex flex-col items-center justify-center gap-6 px-4 text-center">
       {/* Success Message */}
       <h1 className="text-headingXS font-semibold text-white md:text-headingSM lg:text-headingL">
         You have successfully confirmed your email address.
@@ -22,7 +22,7 @@ function EmailConfirmation() {
         Login
         <BsArrowRight className="text-lg" />
       </Link>
-    </div>
+    </main>
   );
 }
 
