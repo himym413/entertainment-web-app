@@ -124,17 +124,19 @@ export async function updateBookmarks(userId, show) {
   return updatedBookmarks;
 }
 
-export async function getBookmarks(page, query) {
+export async function getBookmarks(page, query, userId) {
   const startIndex = (Number(page) - 1) * ITEMS_PER_BOOKMARK_PAGE;
   const endIndex = startIndex + ITEMS_PER_BOOKMARK_PAGE;
 
-  let { data: profiles, error } = await supabase
+  let { data: profile, error } = await supabase
     .from("profiles")
-    .select("bookmarks");
+    .select("bookmarks")
+    .eq("id", userId)
+    .single();
 
   if (error) throw new Error(error.message);
 
-  let bookmarks = profiles.at(0).bookmarks;
+  let bookmarks = profile?.bookmarks || [];
 
   if (query)
     bookmarks = bookmarks.filter(

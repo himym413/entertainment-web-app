@@ -2,12 +2,14 @@ import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { searchShows, getShows } from "../services/apiTMDB";
 import { getBookmarks } from "../services/apiProfiles";
 import { useEffect } from "react";
+import { useUser } from "../features/auth/useUser";
 
 export function useShows(page, showType, query = "", bookmarksPage) {
+  const { user } = useUser();
   const queryClient = useQueryClient();
 
   const fetchShows = bookmarksPage
-    ? () => getBookmarks(Number(page), query)
+    ? () => getBookmarks(Number(page), query, user?.id)
     : query
       ? () => searchShows(query, Number(page), showType)
       : () => getShows(Number(page), showType);
@@ -34,7 +36,7 @@ export function useShows(page, showType, query = "", bookmarksPage) {
     queryClient.prefetchQuery({
       queryKey: nextPageQueryKey,
       queryFn: bookmarksPage
-        ? () => getBookmarks(Number(page) + 1, query)
+        ? () => getBookmarks(Number(page) + 1, query, user?.id)
         : query
           ? () => searchShows(query, Number(page) + 1, showType)
           : () => getShows(Number(page) + 1, showType),
