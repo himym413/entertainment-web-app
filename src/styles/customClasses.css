@@ -12,11 +12,11 @@
   }
 }
 
-.input-hover-and-focus:hover + span,
+/* .input-hover-and-focus:hover + span,
 .input-hover-and-focus:focus + span,
 .input-hover-and-focus:focus-within + span {
   background-color: white;
-}
+} */
 
 .scrollbar-hidden {
   -ms-overflow-style: none;
