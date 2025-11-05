@@ -1,12 +1,11 @@
 import { Link } from "react-router-dom";
-import { useProfile } from "../features/auth/useProfile";
 import {
   iconPlay,
   iconCategoryMovie,
   iconCategoryTv,
 } from "../assets/svgIcons";
 import { IMAGE_URL, IMAGE_WIDTH } from "../utils/constants";
-import missingImage from "../assets/missingImageAlt.jpeg";
+import missingImage from "../assets/missingImageAlt.svg";
 
 import BookmarkButton from "../features/bookmarks/BookmarkButton";
 
@@ -38,7 +37,7 @@ function ShowItem({ show, recommended = false }) {
       title: "text-bodyM",
     },
     recommended: {
-      item: "min-h-[110px] w-[164px] flex flex-col gap-2 gap-y-4 md:w-[220px] md:h-[140px] lg:w-[280px] lg:h-[174px]",
+      item: "min-h-[110px] w-[164px] flex flex-col gap-2 gap-y-4 customMDItem1:w-[200px] customMD:w-[190px] md:h-[140px] md:w-[220px] customMDItem3:w-[250px] customMDItem4:w-[280px] customMDItem4:h-[180px] lg:w-[270px] lg:h-[180px] customLGItem1:w-[300px] customLGItem2:w-[320px] customLGItem2:h-[200px] customLGItem3:w-[340px] customLGItem4:w-[320px]  customLGItem5:w-[350px]",
       descriptionContainer: "",
       descriptionText: "text-[11px] md:text-[13px]",
       title: "text-[15px] md:text-headingXS",
@@ -56,7 +55,7 @@ function ShowItem({ show, recommended = false }) {
       {recommended && (
         <img
           src={imageUrl}
-          className="h-[92px] w-[164px] rounded-xl md:h-[140px] md:w-[220px] lg:h-[157.5px] lg:w-[280px]"
+          className="customMDItem1:w-[200px] customMDItem3:w-[250px] customMDItem4:w-[280px] customMDItem4:h-[174px] customLGItem1:w-[300px] customLGItem2:w-[320px] customLGItem3:w-[340px] customLGItem4:w-[320px] customLGItem5:w-[350px] h-auto w-[164px] rounded-xl customMD:w-[190px] md:w-[220px] lg:w-[270px]"
           alt="Show image"
         />
       )}
