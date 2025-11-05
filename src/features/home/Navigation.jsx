@@ -17,7 +17,7 @@ function Navigation() {
 
   return (
     <nav
-      className="sticky top-0 z-10 bg-primaryColor p-4 md:mx-6 md:mt-6 md:rounded-md md:p-5 md:pr-4 lg:fixed lg:my-8 lg:ml-8 lg:h-[calc(100%-64px)] lg:max-h-heightNavigationDesktop lg:w-24 lg:rounded-[20px] lg:p-7"
+      className="sticky top-0 z-10 bg-primaryColor p-4 md:mx-6 md:mt-6 md:rounded-md md:p-5 md:pr-4 lg:fixed lg:my-8 lg:ml-8 lg:h-[calc(100%-64px)] lg:max-h-heightNavigationDesktop lg:w-24 lg:rounded-[20px] lg:p-4"
       aria-label="Main"
     >
       <ul className="flex items-center justify-between lg:h-full lg:flex-col lg:justify-normal lg:gap-10 lg:overflow-hidden">
@@ -25,17 +25,40 @@ function Navigation() {
           <Logo tailwindClasses={"h-5 w-6 md:h-7 md:w-8"} />
         </li>
         <div className="flex items-center gap-6 md:gap-8 lg:mb-auto lg:flex-col lg:gap-10">
-          <li className="homePage link-hover-and-focus">
-            <NavLink to="/">{iconNavHome}</NavLink>
+          <li className="homePage link-hover-and-focus flex flex-col items-center">
+            <NavLink to="/" className="flex flex-col items-center">
+              {iconNavHome}
+              <span className="mt-1 hidden text-xs text-gray-400 md:block">
+                Home
+              </span>
+            </NavLink>
           </li>
-          <li className="link-hover-and-focus">
-            <NavLink to="/movies">{iconNavMovies}</NavLink>
+
+          <li className="link-hover-and-focus flex flex-col items-center">
+            <NavLink to="/movies" className="flex flex-col items-center">
+              {iconNavMovies}
+              <span className="mt-1 hidden text-xs text-gray-400 md:block">
+                Movies
+              </span>
+            </NavLink>
           </li>
-          <li className="link-hover-and-focus">
-            <NavLink to="/tv">{iconNavTv}</NavLink>
+
+          <li className="link-hover-and-focus flex flex-col items-center">
+            <NavLink to="/tv" className="flex flex-col items-center">
+              {iconNavTv}
+              <span className="mt-1 hidden text-xs text-gray-400 md:block">
+                TV Series
+              </span>
+            </NavLink>
           </li>
-          <li className="link-hover-and-focus">
-            <NavLink to="/bookmarks">{iconNavBookmarks}</NavLink>
+
+          <li className="link-hover-and-focus flex flex-col items-center">
+            <NavLink to="/bookmarks" className="flex flex-col items-center">
+              {iconNavBookmarks}
+              <span className="mt-1 hidden text-xs text-gray-400 md:block">
+                Bookmarks
+              </span>
+            </NavLink>
           </li>
         </div>
         <div className="flex gap-2 lg:h-fit lg:flex-col">
